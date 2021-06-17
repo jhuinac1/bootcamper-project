@@ -1,4 +1,4 @@
-package com.organization.mvcproject.MGL_Task1.controller;
+ package com.organization.mvcproject.MGL_Task1.controller;
 
 import java.util.List;
 

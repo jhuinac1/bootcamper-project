@@ -5,32 +5,32 @@ import org.springframework.stereotype.Component;
 @Component
 public class Game {
 
-	private Long game_id;
-	private String game_name;
-	private String game_genre;
+	private Long gameId;
+	private String gameName;
+	private String gameGenre;
 
-	public Long getGame_id() {
-		return game_id;
+	public Long getGameId() {
+		return gameId;
 	}
 
-	public void setGame_id(Long game_id) {
-		this.game_id = game_id;
+	public void setGameId(Long gameId) {
+		this.gameId = gameId;
 	}
 
-	public String getGame_name() {
-		return game_name;
+	public String getGameName() {
+		return gameName;
 	}
 
-	public void setGame_name(String game_name) {
-		this.game_name = game_name;
+	public void setGameName(String gameName) {
+		this.gameName = gameName;
 	}
 
-	public String getGame_genre() {
-		return game_genre;
+	public String getGameGenre() {
+		return gameGenre;
 	}
 
-	public void setGame_genre(String game_genre) {
-		this.game_genre = game_genre;
+	public void setGameGenre(String gameGenre) {
+		this.gameGenre = gameGenre;
 	}
 
 }
