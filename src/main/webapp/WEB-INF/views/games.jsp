@@ -75,20 +75,22 @@
             <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading text-light"><span class="lead">List of all current games</span></div>
-                <div class="tablecontainer">
+                <div class="">
                     <table class="table table-dark table-striped text-light">
                         <thead>
                             <tr>
                                 <th>Game Name</th>
                                 <th>Game Genre</th>
-                                <th width="20%"></th>
+                                <th ></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="currentGame in MGL_T1_ctrl.games">
                                 <td><span ng-bind="currentGame.gameName"></span></td>
                                 <td><span ng-bind="currentGame.gameGenre"></span></td>
-                                <td>
+                                <td class="row justify-content-around" > 
+                                	<button class="btn btn-warning" > Edit </button>
+                                	<button class="btn btn-danger"> Delete </button>
                                 </td>
                             </tr>
                         </tbody>
