@@ -51,20 +51,24 @@ public class MockDAO {
 	public Game saveGame(Game game) {		
 		
 		if(game.getGameId() != null) {
-			Game gameIsFound = findGameById(game.getGameId());
-			if(gameIsFound != null) {
-				for(int i = 0; i < games.size(); i++) {
-					if(gameIsFound.getGameId().equals(games.get(i).getGameId())) {
-						games.set(i, gameIsFound);
-						return gameIsFound;
-					}
-				}
-			}
+			updateGame(game.getGameId());
 		}
 		
 		game.setGameId(++gameId);
 		games.add(game);
 		return game;
+	}
+	
+	private Game updateGame(Long gameId) {
+		Game gameIsFound = findGameById(gameId);
+		if(gameIsFound != null) {
+			for(int i = 0; i < games.size(); i++) {
+				if(gameIsFound.getGameId().equals(games.get(i).getGameId())) {
+					games.set(i, gameIsFound);
+				}
+			}
+		}
+		return gameIsFound;
 	}
 	
 	
