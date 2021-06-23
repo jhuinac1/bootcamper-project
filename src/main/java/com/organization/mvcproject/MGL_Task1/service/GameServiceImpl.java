@@ -1,32 +1,32 @@
 package com.organization.mvcproject.MGL_Task1.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.organization.mvcproject.MGL_Task1.model.Game;
-import com.organization.mvcproject.dao.MockDAO;
+import com.organization.mvcproject.MGL_Task1.model.GameImpl;
+import com.organization.mvcproject.api.service.Game_Service;
+import com.organization.mvcproject.dao.MockDAOImpl;
 
 @Service("javaGameService")
-public class Game_Service_Impl implements Game_Service {
+public class GameServiceImpl implements Game_Service {
 
 	@Autowired
-	private MockDAO gameDAO;
+	private MockDAOImpl gameDAO;
 	
 
 	@Override
-	public List<Game> retrieveAllGames() {
+	public List<GameImpl> retrieveAllGames() {
 		return gameDAO.retrieveAllGames();
 	}
 	
 	@Override
-	public Game saveGame(Game game) {
+	public GameImpl saveGame(GameImpl game) {
 		return gameDAO.saveGame(game);
 	}
 	
-	public boolean deleteGame(Game game) {
+	public boolean deleteGame(GameImpl game) {
 		return gameDAO.deleteGame(game);
 	}
 

@@ -2,8 +2,10 @@ package com.organization.mvcproject.MGL_Task1.model;
 
 import org.springframework.stereotype.Component;
 
+import com.organization.mvcproject.api.model.GameInterface;
+
 @Component
-public class Game {
+public class GameImpl implements GameInterface{
 
 	private Long gameId;
 	private String gameName;
