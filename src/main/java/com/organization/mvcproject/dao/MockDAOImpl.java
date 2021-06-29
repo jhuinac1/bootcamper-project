@@ -47,10 +47,10 @@ public class MockDAOImpl implements MockDAOInterface {
 	}
 
 	//Update Or Create
-	public GameImpl saveGame(GameImpl game) {		
-		
+	public GameImpl saveGame(GameImpl game) {
 		if(game.getGameId() != null) {
-			updateGame(game.getGameId());
+			return updateGame(game);
+			
 		}
 		
 		game.setGameId(++gameId);
@@ -58,14 +58,11 @@ public class MockDAOImpl implements MockDAOInterface {
 		return game;
 	}
 	
-	private GameImpl updateGame(Long gameId) {
-		GameImpl gameIsFound = findGameById(gameId);
+	private GameImpl updateGame(GameImpl game) {
+		GameImpl gameIsFound = findGameById(game.getGameId());
 		if(gameIsFound != null) {
-			for(int i = 0; i < games.size(); i++) {
-				if(gameIsFound.getGameId().equals(games.get(i).getGameId())) {
-					games.set(i, gameIsFound);
-				}
-			}
+			gameIsFound.setGameName(game.getGameName().length() > 0 ? game.getGameName(): gameIsFound.getGameName());
+			gameIsFound.setGameGenre(game.getGameGenre().length() > 0 ? game.getGameGenre(): gameIsFound.getGameGenre());
 		}
 		return gameIsFound;
 	}
@@ -84,7 +81,6 @@ public class MockDAOImpl implements MockDAOInterface {
 	
 	public boolean deleteGame(GameImpl game) {
 		GameImpl gameIsFound = findGameById(game.getGameId());
-		
 		
 		if(gameIsFound != null) {
 			for(int i = 0; i < games.size(); i++) {

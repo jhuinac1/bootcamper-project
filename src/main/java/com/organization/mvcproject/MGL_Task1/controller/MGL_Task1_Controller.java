@@ -57,4 +57,10 @@ public class MGL_Task1_Controller {
 		javaGameService.saveGame(game);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
+	@RequestMapping(value = "/updateGame", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Void> updateGame(@RequestBody GameImpl game){
+		javaGameService.saveGame(game);
+		return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
+	}
+	
 }
